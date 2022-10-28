@@ -1,0 +1,32 @@
+{
+    "configurations": [
+
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "first_exp",
+            "type": "python",
+            "request": "launch",
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "5",
+                "OUTPUT_PATH": "${workspaceFolder}/t-few/exp_out",
+                "CONFIG_PATH": "${workspaceFolder}/t-few/configs",
+                "HF_HOME": "/data4/vchua/cache",
+            },
+            "module": "src.pl_train",
+            "cwd": "${workspaceFolder}/t-few",
+            "args": [
+                "-c", "t03b.json+rte.json",
+                "-k", "save_model=False",
+                "exp_name=first_exp"
+            ],
+            "justMyCode": true
+        },
+    ]
+}
